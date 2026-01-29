@@ -1,0 +1,635 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --Primary-color:#C67C4E;
+    --secondary-color:#fc6f52;
+    --red:#f8601b;
+   --white:whitesmoke;
+    --yellow:#ffe141;
+    --blue:#b5c7eb;
+    --green:#08510E;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --black:rgba(2, 6, 12, 0.92);
+    --border-radius:8px;
+    --grey:rgb(105, 105, 105);
+    --offer:#bb0000;
+    --offer-background:#ffde00;
+}
+body {
+  font-family: "Gilroy", sans-serif;
+  line-height:1.6;
+  
+}
+.header{
+   background:var(--yellow) ;
+   box-shadow:var(--shadow);
+   position:sticky;
+   top:0;
+   z-index:1000;
+}
+.header-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.logo{
+    font-size: 1.8rem;
+     font-weight:bold ;
+
+
+}
+.location{
+    display:Flex;
+    align-items: center;
+    gap:0.5rem;
+    cursor:pointer;
+
+}
+.location::before{
+    content:"📍";
+    font-size: 1.2rem;
+}
+.search-container {
+    flex-grow:1;
+    flex-shrink: 1;
+    max-width: 400px;
+    margin:0 2rem;
+    Position:relative;
+}
+.search-input{
+    width:100%;
+    padding: 0.75rem 0.8rem;
+    border:2px solid var(--blue);
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    transition:border-color 0.3s;
+}
+.search-input:focus{
+    border-color:var(--blue);
+    border-width: 3px;
+    outline: none;
+    box-shadow: 1px 1px 1px var(--blue) ;
+}
+.user-actions{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.cart-icon{
+    
+    position:relative;
+    padding:0.5rem;
+    background-color:var(--white);
+    border-radius: var(--border-radius);
+}
+.cart-count{
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    background:var(--secondary-color);
+    color:whitesmoke;
+    border-radius:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;              
+    height: 15px;  
+    padding: 0 4px; 
+    font-size:0.7rem;
+    font-weight: bold;
+    
+}
+
+.hero{
+    
+    background-image: 
+        linear-gradient(
+            rgba(0,0,0,0.2),
+            rgba(0,0,0,0.3)
+        ),
+        url("/Hot food meals banner background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 4rem 0;
+    color: var(--white);
+    text-align: center;
+    
+
+}
+
+
+
+.hero-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 2rem;
+}
+.hero-container h1{
+    font-size:2.8rem;
+    margin-bottom: 1rem;
+}
+.hero-container p{
+    font-size:1.2rem;
+    margin-bottom: 2rem;
+    color:var(--blue);
+
+}
+.cta-button{
+    text-decoration: none;
+    display:inline-block;
+    padding:1rem 2rem;
+    background-color: var(--green);
+    color:var(--white);
+    border-radius: var(--border-radius);
+    font-weight:bold;
+    
+
+}
+.categories{
+    padding:4rem 0;
+    background:var(--white);
+
+}
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+    padding:0 2rem;
+}
+.section-title{
+    font-size:2rem;
+    margin-bottom:3rem ;
+    text-align: center;
+    color:var(--black);
+    letter-spacing: -0.6px;
+}
+.categories-grid{
+    display:grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+
+}
+.category-card{
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding:2rem;
+    text-align: center;
+    cursor:pointer;
+    margin-right:15px;
+    transition: transform 0.3s;
+
+}
+.category-card{
+   transition: transform 0.3s,box-shadow 0.3s;;
+}
+.category-card:hover{
+   transform: scale(1.05);
+   box-shadow:0 7px 10px rgba(0, 0, 0, 0.1); ;
+   
+
+}
+.category-card h2{
+    margin-bottom: 0.5rem;
+    color:var(--red);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.category-card p{
+    margin-bottom: 0.1rem;
+    color:var(--grey);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.category-card img{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+     width:100%;
+     height:100%;
+     border-radius: var(--border-radius);
+     margin-bottom: 0.5rem;
+}
+.resturants{
+    padding:4rem 0;
+    background:var(--white);
+
+}
+.Offers{
+     padding:4rem 0;
+     background:var(--white);
+
+    
+
+}
+.offers-grid{
+    display:grid;
+    gap:5rem;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+.offers-card{
+   
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding:1rem 1rem;
+   
+    text-align: center;
+    cursor:pointer;
+    margin-right:15px;
+    background: #CE2A33;
+background: radial-gradient(circle, rgba(206, 42, 51, 1) 84%, rgba(133, 40, 55, 1) 100%);
+    overflow: hidden;
+
+}
+.offers-title{
+    padding:0.5rem;
+    color:var(--white);
+    font-weight: bold;
+    font-size: x-large;
+}
+.offers-description{
+    color:rgb(239, 229, 83);
+}
+.code{
+  background-color: #fc7823;
+  padding: 1rem;
+  border: none;  
+  color:var(--white);
+  border-radius: var(--border-radius);
+}
+.offers-code{
+    margin:0.5rem 0.5rem;
+  
+    color: var(--white);
+    padding-top:0.2rem ;
+    border-radius: var(--border-radius);
+}
+
+
+.resturtant-grid{
+     display:grid;
+    gap:2rem;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+}
+.resturtant-card{
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    
+    text-align: center;
+    cursor:pointer;
+    margin-right:15px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+
+}
+.resturtant-card img{
+    width:100%;
+    height:180px;
+    object-fit: cover; 
+     display: block;
+     
+}
+.resturtant-info{
+    padding:1.5rem;
+}
+.resturtant-name {
+    margin-bottom: 0.5rem;
+    color:var(--red);
+    font-weight: bold;
+     display:flex;
+     justify-content: center;
+    align-items: center;
+
+}
+.resturtant-cuisine{
+    margin-bottom: 0.1rem;
+    color:var(--grey);
+     display:flex;
+     justify-content: center;
+     align-items: center;
+}
+.resturtant-card{
+   transition: transform 0.3s ease,box-shadow 0.3s;;
+}
+.resturtant-card:hover{
+   transform: scale(1.05);
+   box-shadow:0 7px 10px rgba(0, 0, 0, 0.1); ;
+   
+
+}
+.resturtant-details{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:0.5rem;
+   
+}
+.rating{
+    display:flex;
+    align-items: center;
+    gap:0.25rem;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    padding:0.25rem 0.5rem;
+    font-size:0.9rem;
+}
+.Delivery-time{
+    display:flex;
+    align-items: center;
+    color:var(--red);
+}
+.menu-grid{
+    display:grid;
+    gap:2rem;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    
+
+}
+
+.menu-card{
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    cursor:pointer;
+    margin-right:15px;
+    transition: transform 0.3s;
+    overflow: hidden;
+
+
+}
+.menu-card{
+    transition:transform 0.3s ease,box-shadow 0.3s;
+}
+.menu-card:hover{
+   transform: scale(1.05);
+   box-shadow:0 7px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.Menu{
+    padding:4rem 0;
+    background-color: var(--white);
+}
+.menu-image img{
+    width:100%;
+    height:180px;
+    object-fit: cover;
+
+}
+.menu-info{
+     padding:1.5rem;
+     
+
+}
+.menu-name{
+    display:flex;
+     justify-content: center;
+    align-items: center;
+    color: var(--red);
+     font-weight: bold;
+      margin-bottom: 0.5rem;
+
+
+}
+.menu-description{
+    margin-bottom: 0.1rem;
+    color:var(--grey);
+    margin-bottom: 0.5rem;
+
+}
+.menu-Footer{
+     display:flex;
+     justify-content: space-between;
+     align-items: center;
+      padding:0.25rem 0.5rem;
+      font-size:0.9rem;
+
+}
+.menu-price{
+    color:var(--green);
+    font-weight:bold;
+    
+}
+.Add-button{
+    padding: 6px 14px;
+    background-color: #08510E;
+    color: var(--white);
+    border-radius: var(--border-radius);
+    border: none;
+    
+
+}
+.menu-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+footer{
+    padding:4rem 0;
+    background-color: black;
+    color: var(--white);
+    
+}
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+ 
+
+}
+.footer-links a{
+      display: inline-block; 
+}
+.footer-links {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    margin-top: 2rem;
+    gap: 3.5rem;
+}
+ul{
+    list-style: none;
+    
+    
+    
+}
+.footerlogo{
+display:flex;
+ align-items:left ;
+ justify-content: left;
+ font-size: 40px;
+}
+li a {
+  text-decoration: none;
+  color: rgb(232 232 232 / var(--tw-text-opacity, 1));
+  opacity: 0.5;
+  display: flex;
+    align-items: center;
+    justify-content: left;
+ 
+  
+  
+}
+
+
+ .Footor-section  a:hover{
+    color: var(--yellow);
+    
+}
+.Footer-section h3{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.Footer-Bottom{
+    margin-top: 4rem;
+    opacity:0.5;
+    text-align:center;
+}
+
+.restaurant-grid {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.resturtant-card {
+    opacity: 0;
+   
+    animation: cardReveal 0.6s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+.menu-card {
+    opacity: 0;
+    
+    animation: cardReveal 0.8s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+
+}
+.offers-card {
+  opacity: 0;
+  transform: scale(0.95);
+
+  animation:
+    cardReveal 0.8s ease-out forwards,
+    zoomPulse 2.5s ease-in-out infinite;
+
+  animation-timeline: view(), auto;
+  animation-range: entry 0% cover 25%;
+}
+
+
+.offers-card:nth-child(1) { animation-delay: 0.1s, 1s; }
+.offers-card:nth-child(2) { animation-delay: 0.4s, 1s; }
+.offers-card:nth-child(3) { animation-delay: 0.7s, 1s; }
+
+.resturtant-card:nth-child(1) { animation-delay: 0.1s; }
+.resturtant-card:nth-child(2) { animation-delay: 0.2s; }
+.resturtant-card:nth-child(3) { animation-delay: 0.3s; }
+.resturtant-card:nth-child(4) { animation-delay: 0.4s; }
+.resturtant-card:nth-child(5) { animation-delay: 0.5s; }
+.resturtant-card:nth-child(6) { animation-delay: 0.6s; }
+.menu-card:nth-child(1) { animation-delay: 0.1s; }
+.menu-card:nth-child(2) { animation-delay: 0.3s; }
+.menu-card:nth-child(3) { animation-delay: 0.6s; }
+.menu-card:nth-child(4) { animation-delay: 0.8s; }
+.menu-card:nth-child(5) { animation-delay: 1s; }
+.menu-card:nth-child(6) { animation-delay: 1.2s; }
+@keyframes cardReveal {
+    to {
+        opacity: 1;
+       
+    }
+}
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+        background-position: top;
+    }
+
+    .hero-container h1 {
+        font-size: 2rem;
+    }
+
+    .hero-container p {
+        font-size: 1rem;
+    }
+    .hero-container .cta-button{
+        font-size: 0.8rem;
+        padding:1rem 0.5;
+    }
+}
+@media (max-width: 455px) {
+
+  .header-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo cart"
+      "location location"
+      "search search";
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+ 
+  .logo {
+    grid-area: logo;
+    text-align: left;
+  }
+
+ 
+  .user-actions {
+    grid-area: cart;
+    justify-self: end;
+  }
+
+  
+  .location {
+    grid-area: location;
+    justify-content: flex-start; 
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+ 
+  .search-container {
+    grid-area: search;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+
+
