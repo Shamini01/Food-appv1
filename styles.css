@@ -117,7 +117,7 @@ body {
             rgba(0,0,0,0.2),
             rgba(0,0,0,0.3)
         ),
-        url("/Hot food meals banner background.png");
+        url("images/Hot food meals banner background.png");
 
     background-size: cover;
     background-position: center;
